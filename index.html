@@ -17,7 +17,7 @@
 body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 system-ui,"Segoe UI",Roboto,sans-serif}
 header{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;padding:12px 20px;background:#fff;border-bottom:1px solid var(--bd)}
 h1{font-size:19px;margin:0}.sub{margin:2px 0 0;color:var(--mut);font-size:13px}
-select,input[type=number]{font:inherit;padding:6px 8px;border:1px solid var(--bd);border-radius:6px;background:#fff;min-width:0}
+select,input[type=number],input[type=text]{font:inherit;padding:6px 8px;border:1px solid var(--bd);border-radius:6px;background:#fff;min-width:0}
 input:focus,select:focus,button:focus-visible{outline:2px solid var(--w);outline-offset:1px}
 main{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:14px;padding:14px 20px;max-width:1400px;margin:auto}
 @media(max-width:1000px){main{grid-template-columns:1fr}}
@@ -40,10 +40,57 @@ svg{width:100%;height:auto;display:block;touch-action:none;user-select:none;back
 details{border:1px solid var(--bd);border-radius:10px;background:#fff;margin-bottom:10px;padding:2px 12px}
 summary{cursor:pointer;font-weight:600;padding:9px 0}
 .badge{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12.5px;font-weight:600;background:#E0F2FE;color:#075985}
+.badge.okb{background:#D1FAE5;color:#065F46}.badge.badb{background:#FEE2E2;color:#991B1B}.badge.wb{background:#FEF3C7;color:#92400E}
 .al{padding:8px 10px;border-radius:8px;font-size:13px;margin:8px 0}
 .al.ok{background:#ECFDF5;color:#065F46}.al.warn{background:#FEF3C7;color:#92400E}.al.bad{background:#FEE2E2;color:#991B1B;font-weight:600}
+.al.info{background:#F0F9FF;color:#075985}
 .steps{font-size:13px}.steps div{padding:4px 0;border-bottom:1px dashed var(--bd)}
 .seg{display:flex;border:1px solid var(--w);border-radius:8px;overflow:hidden}.seg button{border:0;border-radius:0;background:#fff}.seg button.on{background:var(--w);color:#fff}
+/* ---- tabla de referencia de K ---- */
+.kt{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0 4px}
+.kt td{padding:3px 6px;border-bottom:1px solid #EEF2F6}.kt td:last-child{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.kt th.bk{text-align:left;padding:6px;font-size:12px;border-radius:6px}.kt th.bk small{display:block;font-weight:500;font-size:11px}
+.kt th.b1{background:#D1FAE5;color:#065F46}.kt th.b2{background:#FEE2E2;color:#991B1B}
+.kt tr.cur td{background:#FEF9C3;font-weight:700}
+.kt td.kn{color:var(--mut);font-size:11px;text-align:left!important;border:0}
+/* ---- caracterización de la muestra ---- */
+#czBox{margin-top:10px;padding:2px 14px 12px}
+#czBox>summary{font-size:15px}
+.tabs{display:inline-flex;border:1px solid var(--w);border-radius:8px;overflow:hidden;margin:2px 0 10px;flex-wrap:wrap}
+.tabs button{border:0;border-radius:0}.tabs button.on{background:var(--w);color:#fff}
+.czg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px}
+@media(max-width:1200px){.czg{grid-template-columns:1fr}}
+.czg h4{margin:12px 0 4px;font-size:13.5px}
+.gt{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums}
+.gt th{background:#F1F5F9;color:#334155;font-weight:600;padding:5px 4px;border-bottom:1px solid var(--bd);text-align:left;font-size:12px}
+.gt td{padding:3px 4px;border-bottom:1px solid #EEF2F6;vertical-align:middle}
+.gt input{width:100%;padding:3px 5px;font:inherit;border:1px solid var(--bd);border-radius:5px;background:#fff}
+.gt td.c{text-align:right;white-space:nowrap}
+.gt tr.pan td{background:#FFFBEB;font-weight:600}.gt tr.pan small{display:block;font-weight:500;color:var(--mut);font-size:11px}
+button.x{padding:2px 7px;border-color:#FCA5A5;color:var(--bad)}button.x:hover{background:#FEE2E2}
+.addr{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}.addr input{width:135px}
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:8px}
+.rg>div{border:1px solid var(--bd);border-radius:8px;padding:6px 8px;background:#FAFCFE}
+.rg b{display:block;font-size:15px;font-variant-numeric:tabular-nums}
+.kc{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px}
+.kc td,.kc th{padding:4px 6px;border-bottom:1px solid #EEF2F6;text-align:left}.kc th{background:#F1F5F9;font-weight:600}
+.kc td.c{text-align:right;font-variant-numeric:tabular-nums}
+#gsvg,#psvg{background:#fff;border:1px solid var(--bd)}
+.gt tr.nod td{background:#F8FAFC}.gt tr.nod input[data-f=d]{border-style:dashed}
+.atb{border:1px solid var(--bd);border-radius:10px;padding:2px 10px 10px;margin-top:12px;transition:background .2s,box-shadow .2s}
+.atb.need{border-color:#F59E0B;background:#FFFBEB;box-shadow:0 0 0 3px #FEF3C7}
+.atb .chk{display:flex;gap:6px;align-items:flex-start;font-size:13px;margin:5px 0}
+.atb .chk input{margin-top:3px}
+#psvg{margin-top:8px}
+/* ---- MUSGo ---- */
+.mg .inl select{flex:1}
+.mgbar{height:5px;background:#E2E8F0;border-radius:9px;margin:8px 0;overflow:hidden}.mgbar i{display:block;height:100%;width:0;background:var(--ok);transition:width .15s linear}
+.mgcap{min-height:46px;background:#0F172A;color:#F8FAFC;border-radius:8px;padding:8px 10px;font-size:13.5px;line-height:1.4}
+.mgcap small{color:#94A3B8}
+.mgst{font-size:11.5px;color:var(--mut);margin:6px 0}.mgst code{font-size:11px;background:#F1F5F9;padding:0 3px;border-radius:3px}
+.mgl{position:relative;max-height:140px;overflow:auto;font-size:12.5px;border-top:1px dashed var(--bd);padding-top:4px;margin-bottom:8px}
+.mgl p{margin:0;padding:3px 5px;border-radius:5px;cursor:pointer}.mgl p:hover{background:#F1F5F9}
+.mgl p.on{background:#D1FAE5;color:#065F46;font-weight:600}.mgl p small{color:var(--mut);margin-right:6px;font-variant-numeric:tabular-nums}
 /* ---- animaciones SVG ---- */
 .fl{fill:none;stroke:#fff;stroke-width:2;stroke-dasharray:2 12;stroke-linecap:round;animation:fl .7s linear infinite}
 .fl.r{animation-direction:reverse}
@@ -81,7 +128,7 @@ summary{cursor:pointer;font-weight:600;padding:9px 0}
       <button data-p="asc">↑ Flujo ascendente</button>
       <button data-p="desc">↓ Flujo descendente</button>
       <button data-p="eq">ΔH = 0 (equilibrio)</button>
-      <button data-p="crit">i ≈ 1 (crítico)</button>
+      <button data-p="crit">i ≈ i_c (crítico)</button>
       <button class="g" id="reset">Reiniciar</button>
     </div>
     <svg id="svg" viewBox="0 0 910 650" role="img" aria-label="Permeámetro de carga constante">
@@ -110,11 +157,77 @@ summary{cursor:pointer;font-weight:600;padding:9px 0}
       <span class="lbl">Nivel libre del recipiente de carga constante</span>
       <div class="inl"><input type="number" step="any" id="fh2"><span class="ul"></span></div></div>
     <div class="card k"><span class="lbl">Coeficiente de permeabilidad K</span>
-      <div class="big" id="kv">—</div><span class="lbl" id="kun"></span><b id="k20" style="font-size:13px"></b></div>
+      <div class="big" id="kv">—</div><span class="lbl" id="kun"></span><b id="k20" style="font-size:13px"></b><span class="lbl" id="kteo"></span></div>
   </div>
+
+  <!-- ============ Caracterización de Muestra de Laboratorio ============ -->
+  <details open id="czBox"><summary>Caracterización de Muestra de Laboratorio &nbsp;<span class="badge" id="czSucs">—</span></summary>
+    <div class="tabs" role="tablist" aria-label="Vía de entrada">
+      <button id="tA" class="on" role="tab">Modo A · Tabla granulométrica completa</button>
+      <button id="tB" role="tab">Modo B · Ingreso directo de D₁₀, D₃₀, D₆₀</button>
+    </div>
+    <div class="czg">
+      <div>
+        <div id="paneA">
+          <div class="fld"><label>Peso seco inicial, W<sub>inicial</sub></label><input type="number" step="any" id="gWi"><span class="u">g</span></div>
+          <div class="fld"><label>Peso seco tras lavado en #200, W<sub>lavado</sub><small id="gLost">opcional</small></label><input type="number" step="any" id="gWl" placeholder="—"><span class="u">g</span></div>
+          <table class="gt">
+            <thead><tr><th style="width:17%">Malla</th><th style="width:19%">Abertura (mm)</th><th style="width:21%">Peso Retenido (g)</th><th class="c">% Retenido</th><th class="c">% Que Pasa</th><th></th></tr></thead>
+            <tbody id="gBody"></tbody>
+          </table>
+          <div class="addr">
+            <input type="text" id="gNn" placeholder="Malla (ej. 50, #30, 3/8&quot;)" title="Si es una malla ASTM E11, la abertura se rellena sola">
+            <input type="number" step="any" id="gNd" placeholder="Abertura (mm) · auto">
+            <button id="gAdd">+ Agregar malla</button>
+            <button class="g" id="gRst">Restablecer tabla</button>
+          </div>
+          <div class="lbl" id="gAddMsg" style="color:var(--bad);min-height:16px"></div>
+          <div class="al ok" id="gMsg"></div>
+        </div>
+        <div id="paneB" style="display:none">
+          <div class="fld"><label>D₁₀<small>diámetro efectivo</small></label><input type="number" step="any" id="gD10"><span class="u">mm</span></div>
+          <div class="fld"><label>D₃₀</label><input type="number" step="any" id="gD30"><span class="u">mm</span></div>
+          <div class="fld"><label>D₆₀</label><input type="number" step="any" id="gD60"><span class="u">mm</span></div>
+          <div class="fld"><label>% que pasa la malla #4 (4.75 mm)<small>para separar grava / arena</small></label><input type="number" step="any" id="gP4"><span class="u">%</span></div>
+          <div class="fld"><label>% que pasa la malla #200 (0.075 mm)<small>contenido de finos</small></label><input type="number" step="any" id="gP200"><span class="u">%</span></div>
+          <div class="fld"><label>Tamaño máximo de partícula, D<sub>máx</sub><small>para verificar ASTM D2434</small></label><input type="number" step="any" id="gDmax"><span class="u">mm</span></div>
+          <div class="al info">En este modo la curva muestra solo los puntos característicos ingresados.</div>
+        </div>
+        <div class="atb" id="atBox">
+          <h4>Límites de Atterberg (Plasticidad) <span class="badge" id="atTag">Opcional</span></h4>
+          <div class="fld"><label>Límite Líquido, w<sub>L</sub></label><input type="number" step="any" id="gwL" placeholder="—"><span class="u">%</span></div>
+          <div class="fld"><label>Límite Plástico, w<sub>P</sub></label><input type="number" step="any" id="gwP" placeholder="—"><span class="u">%</span></div>
+          <label class="chk"><input type="checkbox" id="gNP"> <span>No Plástico (NP) — deshabilita w<sub>P</sub> y fija I<sub>P</sub> = 0</span></label>
+          <label class="chk"><input type="checkbox" id="gOrg"> <span>Suelo orgánico (olor / color oscuro o caída de w<sub>L</sub> al secar ≥ 25 %)</span></label>
+          <div class="lbl" id="atRes"></div>
+          <svg id="psvg" viewBox="0 0 340 240" role="img" aria-label="Carta de Plasticidad de Casagrande"></svg>
+          <div class="lbl" id="psHint"></div>
+        </div>
+        <h4>Gravedad específica y masa seca en el cilindro</h4>
+        <div class="fld"><label>Gravedad específica, G<sub>s</sub><small>opcional · ej. 2.65</small></label><input type="number" step="any" id="gGs" placeholder="—"><span class="u">—</span></div>
+        <div class="fld"><label>Masa seca del suelo en el cilindro, M<sub>s</sub><small>opcional</small></label><input type="number" step="any" id="gMs" placeholder="—"><span class="u">g</span></div>
+        <button class="g" id="gEx" title="Gs = 2.65 y Ms para ρd ≈ 1.65 g/cm³">Cargar ejemplo (G<sub>s</sub>, M<sub>s</sub>)</button>
+      </div>
+      <div>
+        <svg id="gsvg" viewBox="0 0 620 440" role="img" aria-label="Curva granulométrica semilogarítmica"></svg>
+        <div class="al warn" id="gHyd" style="display:none"></div>
+        <div id="czRes"></div>
+      </div>
+    </div>
+  </details>
 </section>
 
 <aside>
+  <details open class="mg"><summary>🎙 MUSGo · Asistente de Voz</summary>
+    <div class="inl"><select id="mgSel" aria-label="Cápsula"></select><button id="mgPlay">▶ Reproducir</button></div>
+    <button id="mgExp" style="width:100%;margin-top:6px">Explicar estado actual</button>
+    <div class="mgbar"><i id="mgProg"></i></div>
+    <div class="mgcap" id="mgCap" aria-live="polite"></div>
+    <div class="mgst" id="mgSt"></div>
+    <div class="mgl" id="mgList"></div>
+    <audio id="mgA" preload="none"></audio>
+  </details>
+
   <details open><summary>Muestra y recipientes</summary>
     <div class="fld"><label>Diámetro de la muestra, D<small>define el área A</small></label><input type="number" step="any" id="fD"><span class="u ul"></span></div>
     <div class="fld"><label>Longitud de la muestra de suelo, L<small>usada en la fórmula de Darcy</small></label><input type="number" step="any" id="fL"><span class="u ul"></span></div>
@@ -144,6 +257,7 @@ summary{cursor:pointer;font-weight:600;padding:9px 0}
 
   <details open><summary>Herramientas de ingeniería</summary>
     <div><b>Clasificación según K:</b> <span class="badge" id="cls">—</span><div class="lbl" id="clsr"></div></div>
+    <table class="kt" id="ktab"></table>
     <div class="al ok" id="alert"></div>
     <div><b>Velocidad de descarga</b> v = K·i = Q/A: <b id="vel">—</b></div>
     <p style="margin:10px 0 4px"><b>Cálculo paso a paso</b></p>
@@ -153,6 +267,20 @@ summary{cursor:pointer;font-weight:600;padding:9px 0}
 </main>
 
 <script>
+/* ============ MUSGo · cápsulas de voz (coloca los archivos en ./audio/) ============ */
+const MUSGO_CLIPS={
+  intro:{titulo:'Introducción al ensayo',wav:'./audio/intro.wav',mp3:'./audio/intro.mp3',json:'./audio/intro.json',
+    guion:'Hola, soy MUSGo. En este simulador estudiamos el ensayo de permeabilidad de carga constante. El agua fluye a través de la muestra de suelo solo cuando existe una diferencia de carga entre los dos recipientes. Si ambos niveles son iguales, el sistema está en equilibrio hidrostático y no hay flujo. Arrastra cualquiera de los recipientes para crear una diferencia de carga y observa qué ocurre.'},
+  descendente:{titulo:'Flujo descendente',wav:'./audio/descendente.wav',mp3:'./audio/descendente.mp3',json:'./audio/descendente.json',
+    guion:'Ahora el nivel del recipiente de suelo es mayor que el del agua, así que el flujo es descendente. El agua empuja los granos hacia abajo y aumenta el esfuerzo efectivo, por lo que no existe riesgo de sifonamiento. Con el caudal medido, la longitud de la muestra, el área y la diferencia de carga, la ley de Darcy nos da K igual a Q por L entre A por delta H.'},
+  ascendente:{titulo:'Flujo ascendente',wav:'./audio/ascendente.wav',mp3:'./audio/ascendente.mp3',json:'./audio/ascendente.json',
+    guion:'El nivel del agua supera al del suelo y el flujo es ascendente. La fuerza de filtración actúa hacia arriba y reduce el esfuerzo efectivo entre los granos. Mientras el gradiente hidráulico sea menor que el gradiente crítico, la muestra permanece estable. Observa la alerta del panel: te indica qué tan cerca estás del valor crítico.'},
+  critico:{titulo:'Gradiente crítico',wav:'./audio/critico.wav',mp3:'./audio/critico.mp3',json:'./audio/critico.json',
+    guion:'Atención: el gradiente ascendente alcanzó el valor crítico, que es igual a la gravedad específica menos uno, entre uno más la relación de vacíos. El esfuerzo efectivo tiende a cero, los granos pierden contacto y la arena entra en ebullición. Este fenómeno, llamado sifonamiento o condición movediza, es causa de muchas fallas en presas y excavaciones.'},
+  laboratorio:{titulo:'Datos de laboratorio',wav:'./audio/laboratorio.wav',mp3:'./audio/laboratorio.mp3',json:'./audio/laboratorio.json',
+    guion:'Con los datos de laboratorio caracterizamos la muestra. La curva granulométrica nos da D diez, D treinta y D sesenta, y con ellos los coeficientes de uniformidad y de curvatura. Si la muestra tiene finos, los límites de Atterberg la ubican en la Carta de Plasticidad para completar la clasificación SUCS. Con la gravedad específica y la masa seca calculamos la relación de vacíos, la porosidad y el gradiente crítico exacto. Por último, comparamos el K experimental con las estimaciones de Hazen y de Chapuis.'}
+};
+
 /* ============ Utilidades y estado (todo se guarda en cm y cm³/s) ============ */
 const $=id=>document.getElementById(id), clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
 const PX=4.6, Y0=450, Y=c=>Y0-PX*c;   // 1 cm = 4.6 px; cota 0 (mesa) en y=450
@@ -166,6 +294,9 @@ const fmt=(x,n=4)=>!isFinite(x)?'—':x===0?'0':(Math.abs(x)<1e-3||Math.abs(x)>=
 function fK(x){ if(!isFinite(x))return'—'; if(x===0)return'0'; const a=Math.abs(x);
   if(a>=1&&a<1000)return String(+x.toPrecision(4)); const[m,e]=x.toExponential(3).split('e'); return `${m} × 10<sup>${+e}</sup>`; }
 function setv(id,v,force){const e=$(id); if(force||document.activeElement!==e) e.value=v;}
+const esc=s=>String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+const SUBN={10:'₁₀',30:'₃₀',60:'₆₀'};
+let LAST=null;   // último estado calculado (lo usa MUSGo)
 
 /* ============ Modelo físico ============ */
 function calc(commit){
@@ -192,13 +323,174 @@ function calc(commit){
   return{E,A,dH,dir,i,Qe,Q1,Q2,K,hasK,tok,T,ratio,K20};
 }
 function commit(){calc(true);}
-function classify(k){ // cortes estándar, k en cm/s
-  if(k>=1)return['Grava limpia','K ≥ 1 cm/s'];
-  if(k>=1e-2)return['Arena gruesa / media','10⁻² – 1 cm/s'];
-  if(k>=1e-3)return['Arena fina','10⁻³ – 10⁻² cm/s'];
-  if(k>=1e-4)return['Arena muy fina / limosa','10⁻⁴ – 10⁻³ cm/s'];
-  if(k>=1e-6)return['Limo','10⁻⁶ – 10⁻⁴ cm/s'];
-  return['Arcilla','K < 10⁻⁶ cm/s'];
+
+/* Rangos típicos de K (cm/s) separados por aptitud para el permeámetro de carga constante */
+const KREF=[
+  {b:1,n:'Grava limpia',lo:1,r:'> 1'},
+  {b:1,n:'Arena gruesa',lo:1e-1,r:'10⁻¹ – 1'},
+  {b:1,n:'Arena media',lo:1e-2,r:'10⁻² – 10⁻¹'},
+  {b:1,n:'Arena fina',lo:1e-3,r:'10⁻³ – 10⁻²'},
+  {b:2,n:'Arena limosa / arcillosa (> 10 % finos)',lo:1e-4,r:'10⁻⁴ – 10⁻³'},
+  {b:2,n:'Limo',lo:1e-6,r:'10⁻⁶ – 10⁻⁴'},
+  {b:2,n:'Arcilla',lo:0,r:'< 10⁻⁶'}
+];
+function classify(k){ for(let j=0;j<KREF.length;j++)if(k>=KREF[j].lo)return j; return KREF.length-1; }
+function buildKTable(){
+  let h=`<tr><th colspan="2" class="bk b1">✓ Aptos para Permeámetro de Carga Constante<small>ASTM D2434 · suelos granulares con &lt; 10 % de finos</small></th></tr>`;
+  KREF.forEach((r,j)=>{
+    if(j===4)h+=`<tr><th colspan="2" class="bk b2">✗ NO aptos para Carga Constante (referencia educativa)<small>Requieren Carga Variable o se deducen de Consolidación</small></th></tr>`;
+    h+=`<tr id="kr${j}"><td>${r.n}</td><td>${r.r}</td></tr>`;});
+  h+=`<tr><td colspan="2" class="kn">K en cm/s · rangos típicos orientativos (× 0.01 para m/s)</td></tr>`;
+  $('ktab').innerHTML=h;
+}
+
+/* ============ Caracterización de la muestra (granulometría, SUCS, Gs, Ms) ============ */
+const GDEF=()=>({mode:'A',Wi:500,Wl:488,pan:5,
+  sv:[['#4',4.75,0],['#10',2.00,15],['#20',0.85,60],['#40',0.425,140],['#60',0.250,130],['#100',0.150,85],['#200',0.075,50]].map(([n,d,w])=>({n,d,w})),
+  D10:0.11,D30:0.24,D60:0.46,P4:100,P200:4,Dmax:4.75,Gs:'',Ms:'',wL:'',wP:'',NP:false,org:false});
+let GR=GDEF();
+const num=v=>(v===''||v==null||!isFinite(+v))?NaN:+v;
+
+/* Diccionario de aberturas estándar ASTM E11 (mm) */
+const SIEVES={'3"':75,'2"':50,'1.5"':37.5,'1"':25,'3/4"':19,'1/2"':12.5,'3/8"':9.5,'#4':4.75,'#8':2.36,'#10':2.00,'#12':1.70,'#16':1.18,'#20':0.85,
+  '#30':0.60,'#40':0.425,'#50':0.300,'#60':0.250,'#70':0.212,'#80':0.180,'#100':0.150,'#120':0.125,'#140':0.106,'#170':0.090,'#200':0.075,
+  '#230':0.063,'#270':0.053,'#325':0.045,'#400':0.038};
+const frac=s=>{const m=s.match(/^(\d+)-(\d+)\/(\d+)$/);if(m)return +m[1]+m[2]/m[3];const f=s.match(/^(\d+)\/(\d+)$/);if(f)return f[1]/f[2];return /^\d*\.?\d+$/.test(s)?+s:NaN;};
+// Reconoce "50", "#50", "No. 50", "malla 50", "3/8\"", "3/8 in", "1 1/2\"", "0.375\"" → {k, d}
+function sieveLookup(txt){
+  let s=String(txt||'').trim().toLowerCase().replace(/[“”″]/g,'"').replace(/''/g,'"');
+  s=s.replace(/(\d)\s+(\d+\/\d+)/,'$1-$2').replace(/\s+/g,'');
+  s=s.replace(/(pulgadas?|pulg\.?|inch(es)?|in\.?)$/,'"');
+  s=s.replace(/^(malla)?(no\.?|n[°º]\.?|#)?/,'');
+  const q=s.endsWith('"'); s=s.replace(/"/g,'');
+  if(!s)return null;
+  if(!q&&SIEVES['#'+s])return{k:'#'+s,d:SIEVES['#'+s]};
+  const v=frac(s); if(!isFinite(v))return null;
+  for(const k in SIEVES)if(k.endsWith('"')&&Math.abs(frac(k.slice(0,-1))-v)<1e-6)return{k,d:SIEVES[k]};
+  return null;
+}
+// Ordena de mayor a menor SOLO las mallas con abertura > 0; las personalizadas sin abertura conservan su posición
+function sortSieves(){const slots=[],vals=[];GR.sv.forEach((s,i)=>{if(num(s.d)>0){slots.push(i);vals.push(s);}});
+  vals.sort((a,b)=>b.d-a.d);slots.forEach((i,k)=>GR.sv[i]=vals[k]);}
+
+/* Límites de Atterberg: I_P, Línea A, Línea U y tipo de finos (M, C o C-M) */
+function plast(){
+  const g=GR,wL=num(g.wL),wP=num(g.wP),NP=!!g.NP,org=!!g.org,o={wL,wP,NP,org,IP:NaN,A:NaN,U:NaN,type:null,warn:[]};
+  if(isFinite(wL)){o.A=0.73*(wL-20);o.U=0.90*(wL-8);}
+  if(NP)o.IP=0;
+  else if(isFinite(wL)&&isFinite(wP)){if(wP>wL)o.warn.push('w<sub>P</sub> es mayor que w<sub>L</sub>: revisa los datos (I<sub>P</sub> sería negativo).');else o.IP=wL-wP;}
+  if(NP)o.type='M';
+  else if(isFinite(o.IP)){if(o.IP<4||o.IP<o.A)o.type='M';else if(o.IP>7)o.type='C';else o.type='CM';}
+  if(!NP&&isFinite(o.IP)&&isFinite(o.U)&&o.IP>o.U+1e-9)o.warn.push('El punto queda arriba de la Línea U (límite superior empírico): verifica w<sub>L</sub> y w<sub>P</sub>.');
+  o.has=o.type!==null; return o;
+}
+
+// % que pasa a una abertura d (interpolación lineal en log d)
+function pasaAt(d,pts){
+  if(!pts.length)return NaN;
+  for(const q of pts)if(Math.abs(q.d-d)/d<0.01)return q.p;
+  if(d>pts[0].d)return pts[0].p>=99.95?100:NaN;
+  for(let k=0;k<pts.length-1;k++){const a=pts[k],b=pts[k+1];
+    if(d<=a.d&&d>=b.d)return b.p+(Math.log(d)-Math.log(b.d))/(Math.log(a.d)-Math.log(b.d))*(a.p-b.p);}
+  return NaN;
+}
+// D_x por interpolación logarítmica entre las dos mallas que encierran x
+function Dx(x,pts){
+  if(pts.length<2)return{v:NaN,why:'pocos'};
+  const last=pts[pts.length-1];
+  if(last.p>x)return{v:NaN,why:last.d>0.0751?'fina':'hid'};
+  if(pts[0].p<x)return{v:NaN,why:'grueso'};
+  for(let k=0;k<pts.length-1;k++){const a=pts[k],b=pts[k+1];   // a = d₁ (mayor, p₁) · b = d₂ (menor, p₂)
+    if(a.p>=x&&b.p<=x){
+      if(a.p===b.p)return{v:a.d};
+      return{v:Math.exp(Math.log(b.d)+(x-b.p)/(a.p-b.p)*(Math.log(a.d)-Math.log(b.d)))};}}
+  return{v:NaN,why:'nm'};
+}
+function sucs(o,pl){
+  const F=o.F,P4=o.P4,wl=isFinite(pl.wL),H=wl&&pl.wL>=50,Lh=wl?(H?'H':'L'):null;
+  if(!isFinite(F))return{sym:'—',name:'Falta el % que pasa la malla #200 para clasificar.'};
+  /* ---- Suelos de partículas finas: % pasa #200 > 50 % ---- */
+  if(F>50){
+    const tail=' NO es apto para el permeámetro de carga constante.';
+    if(pl.org){
+      if(!Lh)return{sym:'OL / OH',fine:true,need:true,name:'Suelo orgánico: ingresa w<sub>L</sub> para distinguir OL (w<sub>L</sub> &lt; 50) de OH (w<sub>L</sub> ≥ 50).'+tail};
+      return{sym:'O'+Lh,fine:true,name:`Suelo orgánico de ${H?'alta':'baja'} plasticidad.`+tail};}
+    if(!pl.has||(!Lh&&!pl.NP))return{sym:'ML / CL / MH / CH',fine:true,need:true,name:'Suelo de partículas finas (&gt; 50 % pasa la #200): ingresa w<sub>L</sub> y w<sub>P</sub> (o marca NP) para ubicarlo en la Carta de Plasticidad.'+tail};
+    if(pl.type==='M'){const h=Lh||'L';return{sym:'M'+h,fine:true,name:(h==='H'?'Limo elástico de alta plasticidad':'Limo de baja plasticidad')+(pl.NP?' (no plástico)':'')+'.'+tail};}
+    if(pl.type==='CM')return{sym:'CL-ML',fine:true,name:'Arcilla limosa de baja plasticidad (zona sombreada CL-ML).'+tail};
+    return{sym:'C'+Lh,fine:true,name:(Lh==='H'?'Arcilla de alta plasticidad':'Arcilla de baja plasticidad')+'.'+tail};
+  }
+  /* ---- Suelos de partículas gruesas: % pasa #200 ≤ 50 % ---- */
+  if(!isFinite(P4))return{sym:'—',name:'Suelo grueso: falta el % que pasa la malla #4 para separar grava y arena.'};
+  const gr=100-P4, sa=P4-F, L=gr>sa?'G':'S', NG=L==='S'?'Arena':'Grava';
+  const Cu=o.D60/o.D10, Cc=o.D30*o.D30/(o.D10*o.D60), has=isFinite(Cu)&&isFinite(Cc);
+  const well=has&&(L==='G'?Cu>=4:Cu>=6)&&Cc>=1&&Cc<=3, gd=has?(well?'W':'P'):'?';
+  const grad=gd==='W'?'bien graduada':gd==='P'?'mal graduada':'(graduación no determinable sin D₁₀)';
+  const suf=pl.has?pl.type:null;                                          // 'M', 'C' o 'CM'
+  const fem=L==='S'?'a':'a';
+  let sym,name,need=false;
+  if(F<5){sym=L+gd;name=`${NG} ${grad}`;}
+  else if(F<=12){
+    if(!suf){sym=`${L}${gd}-${L}M / ${L}${gd}-${L}C`;need=true;name=`${NG} ${grad} con limo o arcilla — ingresa w<sub>L</sub> y w<sub>P</sub> (o NP) para definir el símbolo doble`;}
+    else{const s2=suf==='M'?'M':'C';sym=`${L}${gd}-${L}${s2}`;
+      name=`${NG} ${grad} con ${s2==='M'?'limo':'arcilla'}${suf==='CM'?' (finos CL-ML → se usa el sufijo C)':''}`;}}
+  else{
+    if(!suf){sym=`${L}M / ${L}C`;need=true;name=`${NG} limos${fem} o arcillos${fem} — ingresa w<sub>L</sub> y w<sub>P</sub> (o NP) para definir el grupo`;}
+    else if(suf==='M'){sym=L+'M';name=`${NG} limos${fem}`;}
+    else if(suf==='C'){sym=L+'C';name=`${NG} arcillos${fem}`;}
+    else{sym=`${L}C-${L}M`;name=`${NG} limo-arcillos${fem} (finos CL-ML)`;}}
+  if(gd==='?'&&F>=5)name+=' · sin D₁₀ (requiere hidrómetro) la graduación W/P queda indeterminada';
+  return{sym,name,fine:false,L,need};
+}
+function charz(E){
+  const g=GR, o={mode:g.mode,pts:[],plot:[],hyd:[],notes:[]};
+  if(g.mode==='A'){
+    const Wi=num(g.Wi), wl=num(g.Wl), W=Wi>0?Wi:NaN;
+    if(!(Wi>0))o.notes.push('Ingresa un peso seco inicial mayor que 0.');
+    const lost=isFinite(wl)&&W>0?Math.max(0,W-wl):0;                     // peso perdido por lavado
+    const sumS=g.sv.reduce((a,s)=>a+Math.max(0,num(s.w)||0),0), pan=Math.max(0,num(g.pan)||0);
+    const meas=sumS+pan+lost, diff=W-meas, over=diff<-1e-9;
+    const adj=over?0:(isFinite(diff)?diff:0), panT=pan+lost+adj, base=over?meas:W;
+    let p=100;
+    o.rows=g.sv.map(s=>{const r=Math.max(0,num(s.w)||0)/base*100; p-=r; return{n:s.n,d:s.d,r,p:Math.abs(p)<1e-9?0:Math.max(0,p)};});
+    o.A={W,wl,lost,sumS,pan,meas,adj,over,panT,base,err:Math.abs(diff)/W*100,panR:panT/base*100,wlHigh:isFinite(wl)&&wl>W};
+    o.pts=o.rows.filter(r=>r.d>0&&isFinite(r.p)).map(r=>({d:r.d,p:r.p,n:r.n}));   // filas sin abertura: no se grafican
+    o.plot=o.pts; o.noD=o.rows.filter(r=>!(r.d>0)).length;
+    if(o.pts.length){
+      if(o.pts[0].p<99.95){o.Dmax=o.pts[0].d;o.DmaxGe=true;}            // la malla más gruesa ya retiene material
+      else{let k=0;while(k+1<o.pts.length&&o.pts[k+1].p>=99.95)k++;o.Dmax=o.pts[k].d;}}
+    for(const x of[10,30,60]){const r=Dx(x,o.pts);o['D'+x]=r.v;
+      if(r.why==='hid')o.hyd.push(x);
+      if(r.why==='fina')o.notes.push(`D${SUBN[x]} queda por debajo de la malla más fina de la tabla: agrega mallas más finas (hasta la #200).`);
+      if(r.why==='grueso')o.notes.push(`D${SUBN[x]} es mayor que la malla más gruesa: agrega mallas de mayor abertura.`);}
+    o.F=pasaAt(0.075,o.pts); o.P4=pasaAt(4.75,o.pts);
+    if(!isFinite(o.F))o.notes.push('Agrega la malla #200 (0.075 mm) para clasificar por SUCS.');
+  }else{
+    const pos=v=>{const x=num(v);return x>0?x:NaN;};
+    o.D10=pos(g.D10);o.D30=pos(g.D30);o.D60=pos(g.D60);
+    o.F=num(g.P200);o.P4=num(g.P4);o.Dmax=pos(g.Dmax);
+    if(isFinite(o.F)&&(o.F<0||o.F>100))o.notes.push('El % que pasa la #200 debe estar entre 0 y 100.');
+    if(isFinite(o.P4)&&isFinite(o.F)&&o.P4<o.F)o.notes.push('El % que pasa la #4 no puede ser menor que el de la #200.');
+    if((o.D10>=o.D30)||(o.D30>=o.D60))o.notes.push('Debe cumplirse D₁₀ < D₃₀ < D₆₀.');
+    for(const x of[10,30,60])if(isFinite(o.F)&&o.F>x&&!isFinite(o['D'+x]))o.hyd.push(x);
+    o.pts=[[o.D60,60],[o.D30,30],[o.D10,10]].filter(([d])=>d>0).map(([d,p])=>({d,p}));
+    o.plot=[...o.pts];
+    if(isFinite(o.P4))o.plot.push({d:4.75,p:o.P4,n:'#4'});
+    if(isFinite(o.F))o.plot.push({d:0.075,p:o.F,n:'#200'});
+    o.plot.sort((a,b)=>b.d-a.d);
+  }
+  o.Cu=o.D60/o.D10; o.Cc=o.D30*o.D30/(o.D10*o.D60);
+  o.pl=plast(); o.su=sucs(o,o.pl);
+  o.fG=100-o.P4; o.fS=o.P4-o.F; o.fF=o.F;
+  o.ratio=E.D*10/o.Dmax;                                                   // D cilindro (mm) / D máx
+  // Gravedad específica y masa seca → e, n, i_c
+  const Gs=num(g.Gs), Ms=num(g.Ms), A=Math.PI*E.D*E.D/4; o.Gs=Gs; o.Ms=Ms; o.V=A*E.L; o.ic=NaN; o.e=NaN; o.n=NaN;
+  if(Gs>0&&Ms>0){o.sample=true; o.rhod=Ms/o.V; const e=Gs*1/o.rhod-1;     // ρw = 1 g/cm³
+    if(e>0){o.e=e;o.n=e/(1+e);if(Gs>1)o.ic=(Gs-1)/(1+e);else o.notes.push('G_s debe ser mayor que 1 para calcular i_c.');}
+    else o.eBad=true;}
+  o.KH=o.D10>0?o.D10*o.D10:NaN;                                            // Hazen, C = 1.0 → cm/s
+  o.KC=o.D10>0&&o.e>0?2.4622*Math.pow(o.D10*o.D10*Math.pow(o.e,3)/(1+o.e),0.7825):NaN;   // Chapuis (2004) → cm/s
+  return o;
 }
 
 /* ============ Dibujo SVG ============ */
@@ -263,7 +555,7 @@ function render(c){
   s+=(c.dir<0?sup(xh1):meter(xh1,'Q salida',qs,qu))+(c.dir>0?sup(xh2):meter(xh2,'Q salida',qs,qu));
 
   // Recipiente SUELO
-  const boil=c.dir>0&&c.i>=1;
+  const boil=c.dir>0&&c.i>=c.ic;                                // ebullición con el i_c exacto (o ≈ 1.0 si no hay Gs, Ms)
   s+=`<g data-drag="1" class="dr">
     <rect x="${x1}" y="${yt1}" width="${wS}" height="${S.Hr1*PX}" fill="#fff" fill-opacity=".35"/>
     <rect x="${x1+1}" y="${Y(S.h1)}" width="${wS-2}" height="${(S.h1-zb1)*PX}" fill="#38BDF8" fill-opacity=".38"/>
@@ -290,7 +582,7 @@ function render(c){
   s+=`<g data-drag="2" class="dr">
     <rect x="${x2}" y="${yt2}" width="${wW}" height="${S.Hr2*PX}" fill="#fff" fill-opacity=".35"/>
     <rect x="${x2+1}" y="${Y(S.h2)}" width="${wW-2}" height="${(S.h2-zb2)*PX}" fill="#0284C7" fill-opacity=".5"/>
-    
+
     <text x="${x2+60}" y="${Y(zb2)-10}" font-size="10.5" fill="#E0F2FE">tubo de nivel constante</text>`
     +tk(x2,zb2,S.Hr2)+wave(x2+1,x2+wW-1,Y(S.h2))+nabla(x2+wW-20,Y(S.h2))+
     `<path d="M${x2},${yt2} V${yb2} H${x2+wW} V${yt2}" fill="none" stroke="#475569" stroke-width="2.5"/>${tube}</g>`;
@@ -302,13 +594,193 @@ function render(c){
       <circle data-drag="${id}" class="dr" cx="${x}" cy="${Y(clamp(S['h'+id],0,80))}" r="10" fill="#0284C7" stroke="#fff" stroke-width="2.5"/>
       <text data-step="${id}:1" x="${x}" y="${Y(80)-10}" text-anchor="middle" font-size="18" fill="#0284C7" style="cursor:pointer">▲</text>
       <text data-step="${id}:-1" x="${x}" y="${Y(0)+24}" text-anchor="middle" font-size="18" fill="#0284C7" style="cursor:pointer">▼</text>`;
-  s+=`<text x="${cx1}" y="${H-10}" text-anchor="middle" font-weight="700" fill="#B45309">SUELO</text><text x="${cx2}" y="${H-10}" text-anchor="middle" font-weight="700" fill="#0284C7">AGUA</text>`;
+  s+=`<text x="${cx1}" y="${H-10}" text-anchor="middle" font-weight="700" fill="#B45309">SUELO${c.sucs?' · '+esc(c.sucs):''}</text><text x="${cx2}" y="${H-10}" text-anchor="middle" font-weight="700" fill="#0284C7">AGUA</text>`;
   $('dyn').innerHTML=s;
+}
+
+/* ============ Curva granulométrica (SVG semilogarítmico estándar: 100 mm → 0.001 mm, 5 ciclos) ============ */
+function gChart(cz){
+  const W=620,H=440,l=52,r=14,pw=W-l-r, bT=26, b1=bT+44, pT=b1+72, pB=H-52, ph=pB-pT;
+  const DMAX=100,DMIN=0.001,lg=Math.log10;
+  const toX=d=>l+(lg(DMAX)-lg(d))/(lg(DMAX)-lg(DMIN))*pw;          // única función logarítmica para TODO el eje X
+  const toY=p=>pT+(100-p)/100*ph;
+  let s=`<text x="${l}" y="16" font-size="13" font-weight="700" fill="#0F172A">Curva granulométrica</text>`;
+  // ---- Banda 1: encabezado de tamaños
+  const box=(a,b,y,h,txt,fill,fs,vert)=>{const xa=toX(a),xb=toX(b),cx=(xa+xb)/2,cy=y+h/2;
+    return `<rect x="${xa}" y="${y}" width="${xb-xa}" height="${h}" fill="${fill}" stroke="#64748B" stroke-width="1"/>`+
+      (vert?`<text transform="translate(${cx+3.5},${cy}) rotate(-90)" text-anchor="middle" font-size="${fs}" font-weight="700" fill="#334155">${txt}</text>`
+           :`<text x="${cx}" y="${cy+4}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="#334155">${txt}</text>`);};
+  s+=box(100,4.75,bT,44,'Grava','#FFEDD5',12)+box(4.75,0.075,bT,22,'Arena','#FEF3C7',12)+
+     box(4.75,0.425,bT+22,22,'Gruesa a media','#FEF9C3',10.5)+box(0.425,0.075,bT+22,22,'Fina','#FEF9C3',10.5)+
+     box(0.075,0.002,bT,44,'Limo','#E0F2FE',12)+box(0.002,0.001,bT,44,'Arcilla','#EDE9FE',9.5,true);
+  // ---- Banda 3: zonas tenues, cuadrícula logarítmica (5 ciclos) y horizontal
+  for(const[a,b,f]of[[100,4.75,'#FFF7ED'],[4.75,0.075,'#FFFDF4'],[0.075,0.002,'#F5FBFF'],[0.002,0.001,'#F8F5FF']])
+    s+=`<rect x="${toX(a)}" y="${pT}" width="${toX(b)-toX(a)}" height="${ph}" fill="${f}"/>`;
+  for(let e=-3;e<2;e++)for(let m=2;m<10;m++){const x=toX(m*Math.pow(10,e));
+    s+=`<line x1="${x}" x2="${x}" y1="${pT}" y2="${pB}" stroke="#CBD5E1" stroke-width=".6"/>`;}
+  for(let p=0;p<=100;p+=10){const y=toY(p);
+    s+=`<line x1="${l}" x2="${l+pw}" y1="${y}" y2="${y}" stroke="${p%50?'#E2E8F0':'#94A3B8'}" stroke-width="${p%50?.7:1}"/><text x="${l-6}" y="${y+4}" text-anchor="end" font-size="10" fill="#475569">${p}</text>`;}
+  for(const d of[100,10,1,0.1,0.01,0.001]){const x=toX(d);
+    s+=`<line x1="${x}" x2="${x}" y1="${pT}" y2="${pB}" stroke="#475569" stroke-width="1.4"/>`;}
+  // ---- Banda 2: mallas (líneas punteadas hasta el eje X + etiquetas verticales)
+  s+=`<rect x="${l}" y="${b1}" width="${pw}" height="${pT-b1}" fill="#F8FAFC"/>`;
+  for(const[d,t]of[[10,'10 mm'],[4.75,'No. 4'],[2,'No. 10'],[0.85,'No. 20'],[0.425,'No. 40'],[0.15,'No. 100'],[0.075,'No. 200']]){const x=toX(d);
+    s+=`<line x1="${x}" x2="${x}" y1="${b1+2}" y2="${pB}" stroke="#0369A1" stroke-width="1" stroke-dasharray="3 3"/>
+        <text transform="translate(${x-3},${pT-5}) rotate(-90)" font-size="10" font-weight="600" fill="#0369A1">${t}</text>`;}
+  s+=`<rect x="${l}" y="${b1}" width="${pw}" height="${pB-b1}" fill="none" stroke="#475569" stroke-width="1.2"/>`;
+  // ---- Etiquetas del eje X (dos filas para que no se encimen)
+  for(const d of[100,10,1,0.1,0.01,0.001]){const x=toX(d);
+    s+=`<line x1="${x}" x2="${x}" y1="${pB}" y2="${pB+4}" stroke="#475569"/><text x="${x}" y="${pB+15}" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1E293B">${d}</text>`;}
+  for(const[d,t]of[[4.75,'4.75'],[0.85,'0.85'],[0.425,'0.425'],[0.15,'0.150'],[0.075,'0.075'],[0.002,'0.002']]){const x=toX(d);
+    s+=`<line x1="${x}" x2="${x}" y1="${pB}" y2="${pB+18}" stroke="#94A3B8" stroke-width=".8"/><text x="${x}" y="${pB+28}" text-anchor="middle" font-size="9.5" fill="#64748B">${t}</text>`;}
+  s+=`<text x="${l+pw/2}" y="${H-6}" text-anchor="middle" font-size="11" fill="#475569">Diámetro de partícula, mm (escala logarítmica)</text>`;
+  s+=`<text transform="translate(15,${pT+ph/2}) rotate(-90)" text-anchor="middle" font-size="11" fill="#475569">Porcentaje más fino (% que pasa)</text>`;
+  // ---- Curva (solo mallas con abertura > 0 dentro del rango)
+  const P=cz.plot.filter(q=>q.d>=DMIN&&q.d<=DMAX&&isFinite(q.p));
+  if(P.length>1)s+=`<polyline points="${P.map(q=>`${toX(q.d).toFixed(1)},${toY(q.p).toFixed(1)}`).join(' ')}" fill="none" stroke="#0284C7" stroke-width="2.3" stroke-linejoin="round"/>`;
+  for(const q of P)s+=`<circle cx="${toX(q.d)}" cy="${toY(q.p)}" r="3.6" fill="#fff" stroke="#0284C7" stroke-width="2"><title>${q.n?esc(q.n)+' · ':''}${q.d} mm → ${q.p.toFixed(1)} % pasa</title></circle>`;
+  const col={10:'#DC2626',30:'#D97706',60:'#059669'};
+  for(const x of[10,30,60]){const D=cz['D'+x];if(!(D>=DMIN&&D<=DMAX))continue;const X=toX(D),Yp=toY(x),right=X>l+pw-120;
+    s+=`<line x1="${l}" x2="${X}" y1="${Yp}" y2="${Yp}" stroke="${col[x]}" stroke-dasharray="4 3" stroke-width="1.2"/>
+        <line x1="${X}" x2="${X}" y1="${Yp}" y2="${pB}" stroke="${col[x]}" stroke-dasharray="4 3" stroke-width="1.2"/>
+        <circle cx="${X}" cy="${Yp}" r="5" fill="${col[x]}" stroke="#fff" stroke-width="1.5"/>
+        <text x="${right?X-8:X+8}" y="${Yp-7}" text-anchor="${right?'end':'start'}" font-size="11" font-weight="700" fill="${col[x]}" style="paint-order:stroke;stroke:#fff;stroke-width:3px">D${SUBN[x]} = ${fmt(D,3)} mm</text>`;}
+  // ---- Aviso de hidrómetro en la zona de Limo / Arcilla
+  if(cz.F>10){const xc=(toX(0.075)+toX(0.001))/2;
+    s+=`<text x="${xc}" y="${pT+18}" text-anchor="middle" font-size="10" font-weight="700" fill="#B45309" style="paint-order:stroke;stroke:#fff;stroke-width:3px">requiere hidrómetro para D₁₀</text>
+        <text x="${xc}" y="${pT+31}" text-anchor="middle" font-size="9" fill="#92400E" style="paint-order:stroke;stroke:#fff;stroke-width:3px">(para SUCS basta con w_L y w_P)</text>`;}
+  if(!P.length)s+=`<text x="${l+pw/2}" y="${pT+ph/2}" text-anchor="middle" font-size="12" fill="#94A3B8">Ingresa datos para dibujar la curva</text>`;
+  $('gsvg').innerHTML=s;
+}
+
+/* ============ Carta de Plasticidad de Casagrande (ASTM D2487) ============ */
+function pChart(pl){
+  const W=340,H=240,l=40,r=10,t=12,b=36,pw=W-l-r,ph=H-t-b;
+  const X=w=>l+clamp(w,0,100)/100*pw, Yp=ip=>t+(60-clamp(ip,0,60))/60*ph;
+  let s='';
+  for(let w=0;w<=100;w+=10)s+=`<line x1="${X(w)}" x2="${X(w)}" y1="${t}" y2="${t+ph}" stroke="#E2E8F0" stroke-width=".7"/><text x="${X(w)}" y="${t+ph+13}" text-anchor="middle" font-size="9.5" fill="#475569">${w}</text>`;
+  for(let ip=0;ip<=60;ip+=10)s+=`<line x1="${l}" x2="${l+pw}" y1="${Yp(ip)}" y2="${Yp(ip)}" stroke="#E2E8F0" stroke-width=".7"/><text x="${l-5}" y="${Yp(ip)+3}" text-anchor="end" font-size="9.5" fill="#475569">${ip}</text>`;
+  const wA4=20+4/0.73, wA7=20+7/0.73;                                  // Línea A en I_P = 4 y 7
+  s+=`<polygon points="${X(16)},${Yp(4)} ${X(wA4)},${Yp(4)} ${X(wA7)},${Yp(7)} ${X(16)},${Yp(7)}" fill="#C4B5FD" fill-opacity=".55" stroke="#7C3AED" stroke-width=".8"/>`;
+  s+=`<line x1="${X(50)}" x2="${X(50)}" y1="${t}" y2="${t+ph}" stroke="#334155" stroke-width="1.3"/>`;
+  s+=`<polyline points="${X(wA4)},${Yp(4)} ${X(100)},${Yp(0.73*80)}" fill="none" stroke="#0F172A" stroke-width="1.8"/>`;
+  s+=`<polyline points="${X(16)},${Yp(0)} ${X(16)},${Yp(7)} ${X(8+60/0.9)},${Yp(60)}" fill="none" stroke="#DC2626" stroke-width="1.3" stroke-dasharray="5 3"/>`;
+  s+=`<rect x="${l}" y="${t}" width="${pw}" height="${ph}" fill="none" stroke="#475569"/>`;
+  const lab=(w,ip,txt,c='#334155',fs=10)=>`<text x="${X(w)}" y="${Yp(ip)}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${c}">${txt}</text>`;
+  s+=lab(43,22,'CL u OL','#334155',9)+lab(39,3,'ML u OL','#334155',9)+lab(68,46,'CH u OH','#334155',9)+lab(78,21,'MH u OH','#334155',9)+lab(22,4.8,'CL-ML','#6D28D9',7.5);
+  s+=`<text x="${X(92)}" y="${Yp(38)}" text-anchor="middle" font-size="9.5" font-weight="600" fill="#0F172A">Línea A</text>`;
+  s+=`<text x="${X(64.5)}" y="${Yp(52)}" text-anchor="end" font-size="9.5" font-weight="600" fill="#DC2626">Línea U</text>`;
+  s+=`<text x="${X(50)+3}" y="${t+10}" font-size="9" fill="#334155">w<tspan font-size="7" dy="2">L</tspan><tspan dy="-2"> = 50</tspan></text>`;
+  s+=`<text x="${l+pw/2}" y="${H-6}" text-anchor="middle" font-size="10.5" fill="#475569">Límite líquido, w_L (%)</text>`;
+  s+=`<text transform="translate(12,${t+ph/2}) rotate(-90)" text-anchor="middle" font-size="10.5" fill="#475569">Índice de plasticidad, I_P (%)</text>`;
+  if(isFinite(pl.wL)&&isFinite(pl.IP)){const px=X(pl.wL),py=Yp(pl.IP),rt=pl.wL>=30;
+    s+=`<circle cx="${px}" cy="${py}" r="5.5" fill="#DC2626" stroke="#fff" stroke-width="1.8"><title>w_L = ${fmt(pl.wL)} % · I_P = ${fmt(pl.IP)} %</title></circle>
+        <text x="${rt?px-8:px+8}" y="${py-7}" text-anchor="${rt?'end':'start'}" font-size="10" font-weight="700" fill="#DC2626" style="paint-order:stroke;stroke:#fff;stroke-width:3px">(${fmt(pl.wL,3)}, ${fmt(pl.IP,3)})</text>`;}
+  $('psvg').innerHTML=s;
+}
+
+function gTable(){
+  $('gBody').innerHTML=GR.sv.map((s,k)=>{const nod=!(num(s.d)>0);return `<tr class="${nod?'nod':''}" ${nod?'title="Malla sin abertura: entra al balance de masas, pero no se grafica"':''}>
+    <td><input type="text" data-k="${k}" data-f="n" value="${esc(s.n)}" aria-label="Malla"></td>
+    <td><input type="number" step="any" data-k="${k}" data-f="d" value="${nod?'':s.d}" placeholder="— (no se grafica)" aria-label="Abertura"></td>
+    <td><input type="number" step="any" data-k="${k}" data-f="w" value="${s.w}" aria-label="Peso retenido"></td>
+    <td class="c" id="gr${k}">—</td><td class="c" id="gp${k}">—</td>
+    <td><button class="x" data-del="${k}" title="Eliminar malla">✕</button></td></tr>`;}).join('')+
+   `<tr class="pan"><td>Bandeja / Fondo</td><td>0</td>
+    <td><input type="number" step="any" data-f="pan" value="${GR.pan}" aria-label="Peso en bandeja"><small id="gPanT"></small></td>
+    <td class="c" id="grP">—</td><td class="c">0.0 %</td><td></td></tr>`;
+}
+function gSync(){
+  setv('gWi',GR.Wi,1);setv('gWl',GR.Wl,1);setv('gGs',GR.Gs,1);setv('gMs',GR.Ms,1);setv('gwL',GR.wL,1);setv('gwP',GR.wP,1);
+  $('gNP').checked=GR.NP;$('gOrg').checked=GR.org;$('gwP').disabled=GR.NP;
+  for(const k of['D10','D30','D60','P4','P200','Dmax'])setv('g'+k,GR[k],1);
+  $('tA').classList.toggle('on',GR.mode==='A');$('tB').classList.toggle('on',GR.mode==='B');
+  $('paneA').style.display=GR.mode==='A'?'block':'none';$('paneB').style.display=GR.mode==='B'?'block':'none';
+  gTable();
+}
+
+function renderGran(cz,c){
+  const ff=lf(),u=lu(),k=ku(),pc=x=>isFinite(x)?x.toFixed(1)+' %':'—',mm=x=>x>0?fmt(x,3)+' mm':'—';
+  // --- tabla y cierre de masa
+  if(cz.mode==='A'){const A=cz.A;
+    cz.rows.forEach((r,j)=>{const a=$('gr'+j),b=$('gp'+j);if(a)a.textContent=pc(r.r);if(b)b.textContent=pc(r.p);});
+    if($('grP'))$('grP').textContent=pc(A.panR);
+    if($('gPanT'))$('gPanT').textContent=isFinite(A.panT)?`Σ bandeja = ${A.panT.toFixed(1)} g`:'';
+    $('gLost').innerHTML=isFinite(A.wl)?`perdido por lavado = <b>${A.lost.toFixed(1)} g</b>`:'opcional';
+    const m=[];
+    if(A.wlHigh)m.push('⚠ W<sub>lavado</sub> es mayor que W<sub>inicial</sub>: revisa los pesos (se toma pérdida = 0).');
+    if(isFinite(A.wl))m.push(`Peso perdido por lavado = máx(0, ${fmt(A.W)} − ${fmt(A.wl)}) = <b>${A.lost.toFixed(1)} g</b> → sumado a la bandeja.`);
+    m.push(`Σ mallas (${A.sumS.toFixed(1)} g) + bandeja medida (${A.pan.toFixed(1)} g) + lavado (${A.lost.toFixed(1)} g) = <b>${A.meas.toFixed(1)} g</b> de ${fmt(A.W)} g.`);
+    if(A.over)m.push(`⚠ La suma excede W<sub>inicial</sub> en ${(A.meas-A.W).toFixed(1)} g. Los porcentajes se calcularon sobre la masa total medida (${A.meas.toFixed(1)} g) para mantener el cierre en 100 %.`);
+    else if(isFinite(A.adj))m.push(`Ajuste de cierre agregado a la bandeja: <b>${A.adj.toFixed(1)} g</b>.`);
+    if(isFinite(A.err))m.push(`Error de tamizado: <b>${A.err.toFixed(2)} %</b> ${A.err>2?'⚠ supera el 2 % admisible (ASTM D6913).':'✓ dentro del 2 % (ASTM D6913).'}`);
+    $('gMsg').className='al '+(A.over?'bad':A.err>2||A.wlHigh?'warn':'ok');
+    $('gMsg').innerHTML=m.join('<br>');}
+  // --- límites de Atterberg y Carta de Plasticidad
+  const pl=cz.pl, need=isFinite(cz.F)&&cz.F>=5;
+  $('atBox').classList.toggle('need',need);
+  $('atTag').textContent=need?`Requerido: finos = ${cz.F.toFixed(1)} % ≥ 5 %`:'Opcional (finos < 5 %)';
+  $('atTag').className='badge '+(need?'wb':'');
+  $('gwP').disabled=GR.NP;
+  const ar=[];
+  if(isFinite(pl.IP))ar.push(`I<sub>P</sub> = ${pl.NP?'0 (NP)':`w<sub>L</sub> − w<sub>P</sub> = ${fmt(pl.wL)} − ${fmt(pl.wP)} = <b>${fmt(pl.IP)} %</b>`}`);
+  if(isFinite(pl.wL))ar.push(`Línea A: I<sub>P,A</sub> = 0.73·(${fmt(pl.wL)} − 20) = <b>${fmt(pl.A)} %</b> · Línea U: I<sub>P,U</sub> = 0.90·(${fmt(pl.wL)} − 8) = <b>${fmt(pl.U)} %</b>`);
+  if(pl.has)ar.push(`Finos tipo <b>${pl.type==='M'?'M (limosos)':pl.type==='C'?'C (arcillosos)':'C-M (limo-arcillosos, CL-ML)'}</b>${pl.NP?'':isFinite(pl.A)?` · el punto está ${pl.IP>=pl.A?'sobre o arriba':'abajo'} de la Línea A`:''}${isFinite(pl.wL)?` · ${pl.wL>=50?'alta':'baja'} plasticidad (w<sub>L</sub> ${pl.wL>=50?'≥':'&lt;'} 50 %)`:''}.`);
+  for(const w of pl.warn)ar.push(`<span style="color:var(--bad);font-weight:600">⚠ ${w}</span>`);
+  if(!ar.length)ar.push(need?'Ingresa w<sub>L</sub> y w<sub>P</sub> (o marca NP) para completar la clasificación SUCS.':'Con menos de 5 % de finos la plasticidad no cambia el símbolo SUCS.');
+  $('atRes').innerHTML=ar.join('<br>');
+  const showP=need||(isFinite(pl.wL)&&(pl.NP||isFinite(pl.wP)));
+  $('psvg').style.display=showP?'block':'none';
+  if(showP)pChart(pl);
+  $('psHint').textContent=showP?'':'La Carta de Plasticidad aparece al ingresar w_L y w_P, o cuando los finos son ≥ 5 %.';
+  // --- curva y aviso de hidrómetro
+  gChart(cz);
+  const hy=$('gHyd');
+  if(cz.hyd.length){hy.style.display='block';hy.innerHTML=`<b>No alcanzable por tamizado:</b> se requiere prueba de hidrómetro (ASTM D7928) para obtener ${cz.hyd.map(x=>'D'+SUBN[x]).join(', ')}${isFinite(cz.F)?` (pasa ${cz.F.toFixed(1)} % la malla #200)`:''}. Para clasificar en SUCS basta con ingresar w<sub>L</sub> y w<sub>P</sub>.`;}
+  else hy.style.display='none';
+  // --- resultados
+  const cell=(lab,val)=>`<div><span class="lbl">${lab}</span><b>${val}</b></div>`;
+  let h=cz.noD?`<div class="al info">${cz.noD} malla(s) sin abertura conocida: se incluyen en el balance de masas y en los porcentajes, pero no se grafican.</div>`:'';
+  h+=cz.notes.length?`<div class="al warn">${cz.notes.map(esc).join('<br>').replace(/_s/g,'<sub>s</sub>').replace(/i_c/g,'i<sub>c</sub>')}</div>`:'';
+  h+=`<div class="rg">${cell('D₁₀ (diámetro efectivo)',mm(cz.D10))}${cell('D₃₀',mm(cz.D30))}${cell('D₆₀',mm(cz.D60))}
+     ${cell('C<sub>u</sub> = D₆₀ / D₁₀',fmt(cz.Cu,3))}${cell('C<sub>c</sub> = D₃₀² / (D₁₀·D₆₀)',fmt(cz.Cc,3))}
+     ${cell('Grava · Arena · Finos',`${isFinite(cz.fG)?cz.fG.toFixed(0):'—'} · ${isFinite(cz.fS)?cz.fS.toFixed(0):'—'} · ${isFinite(cz.fF)?cz.fF.toFixed(0):'—'} %`)}</div>`;
+  const su=cz.su;
+  h+=`<div class="al ${su.fine?'bad':su.sym==='—'||su.need?'warn':'ok'}"><b>SUCS (ASTM D2487): ${esc(su.sym)}</b> — ${su.name}</div>`;
+  // ASTM D2434
+  let d24;
+  if(su.fine)d24=['badb','✗ No apto ASTM D2434','Suelo fino: usar permeámetro de carga variable (ASTM D5856 / D5084) o deducir K de consolidación.'];
+  else{const okF=isFinite(cz.F)?cz.F<10:null;
+    let okR=null; if(isFinite(cz.ratio)){if(cz.ratio<8)okR=false;else if(!cz.DmaxGe)okR=true;}
+    const why=[`% pasa #200 = ${pc(cz.F)} ${okF===null?'(falta)':okF?'&lt; 10 % ✓':'≥ 10 % ✗ (fuera del rango recomendado para carga constante)'}`,
+      `D<sub>cil</sub>/D<sub>máx</sub> = ${fmt(c.E.D*10,4)} mm / ${cz.DmaxGe?'&gt; ':''}${mm(cz.Dmax)} = ${cz.DmaxGe?'≤ ':''}${fmt(cz.ratio,3)} ${okR===null?(cz.DmaxGe?'(D<sub>máx</sub> excede la malla más gruesa)':'(falta D<sub>máx</sub>)'):okR?'≥ 8 ✓':'&lt; 8 ✗'}`];
+    d24=okF&&okR?['okb','✓ Apto ASTM D2434',why.join(' · ')]:(okF===false||okR===false)?['badb','✗ No cumple ASTM D2434',why.join(' · ')]:['wb','Verificación ASTM D2434 incompleta',why.join(' · ')];}
+  h+=`<div style="margin:6px 0"><span class="badge ${d24[0]}">${d24[1]}</span><div class="lbl">${d24[2]}</div></div>`;
+  // Gs, Ms → e, n, i_c, v_s
+  const vol=c.E.sys==='lab'?`${fmt(cz.V,4)} cm³`:`${fmt(cz.V*1e-6,4)} m³`;
+  const rho=x=>!isFinite(x)?'—':c.E.sys==='lab'?`${fmt(x,4)} g/cm³`:`${fmt(x*1000,4)} kg/m³`;
+  const v=c.dir&&c.hasK?c.K*c.i:0, vs=cz.n>0?v/cz.n:NaN;
+  h+=`<p style="margin:10px 0 2px"><b>Estado de la muestra en el cilindro</b></p>`;
+  if(!cz.sample)h+=`<div class="lbl">Ingresa G<sub>s</sub> y M<sub>s</sub> para calcular ρ<sub>d</sub>, e, n, la velocidad intersticial y el gradiente crítico exacto (por ahora se usa i<sub>c</sub> ≈ 1.0).</div>`;
+  else if(cz.eBad)h+=`<div class="al bad">ρ<sub>d</sub> = ${rho(cz.rhod)} ≥ G<sub>s</sub>·ρ<sub>w</sub>: la relación de vacíos resulta e ≤ 0. Revisa M<sub>s</sub>, G<sub>s</sub>, D o L.</div>`;
+  h+=`<div class="rg">${cell('V = A·L',vol)}${cell('ρ<sub>d</sub> = M<sub>s</sub> / V',rho(cz.rhod))}${cell('e = G<sub>s</sub>·ρ<sub>w</sub>/ρ<sub>d</sub> − 1',fmt(cz.e,4))}
+     ${cell('n = e / (1 + e)',fmt(cz.n,4))}${cell('i<sub>c</sub> = (G<sub>s</sub> − 1)/(1 + e)',fmt(cz.ic,4))}${cell('v<sub>s</sub> = v / n',isFinite(vs)?`${fmt(vs*ff,4)} ${k}`:'—')}</div>`;
+  // K experimental vs teórico
+  const Ke=c.hasK?c.K:NaN, rr=x=>isFinite(Ke)&&x>0?fmt(Ke/x,3):'—';
+  h+=`<table class="kc"><tr><th>Coeficiente K</th><th class="c">Valor (${k})</th><th class="c">K<sub>exp</sub>/K</th></tr>
+     <tr><td><b>Experimental</b> (Darcy${c.E.run==='demo'?', fijo':''})</td><td class="c"><b>${fK(Ke*ff)}</b></td><td class="c">1</td></tr>
+     <tr><td>Hazen: 1.0·D₁₀²</td><td class="c">${fK(cz.KH*ff)}</td><td class="c">${rr(cz.KH)}</td></tr>
+     <tr><td>Chapuis: 2.4622·[D₁₀²·e³/(1+e)]<sup>0.7825</sup></td><td class="c">${fK(cz.KC*ff)}</td><td class="c">${rr(cz.KC)}</td></tr></table>
+     <div class="lbl" style="margin-top:4px">D₁₀ en mm; fórmulas empíricas que entregan K en cm/s (convertido automáticamente). ${!(cz.D10>0)?'Sin D₁₀ no se pueden estimar.':!(cz.e>0)?'Chapuis requiere e (ingresa G<sub>s</sub> y M<sub>s</sub>).':''}</div>`;
+  $('czRes').innerHTML=h;
+  const sb=$('czSucs'); sb.textContent=su.sym==='—'?'Sin clasificar':'SUCS · '+su.sym; sb.className='badge '+(su.fine?'badb':su.sym==='—'?'':su.need?'wb':'okb');
 }
 
 /* ============ Actualización general ============ */
 function update(force){
   const c=calc(), S=c.E, ff=lf(), u=lu(), k=ku();   // S = valores efectivos (borrador saneado)
+  const cz=charz(S); c.icx=isFinite(cz.ic); c.ic=c.icx?cz.ic:1; c.sucs=cz.su&&cz.su.sym!=='—'?cz.su.sym:'';
+  LAST={c,cz};
   if(S.run==='lab'&&c.dir&&isFinite(c.K))lastK=c.K;
   document.querySelectorAll('.ul').forEach(e=>e.textContent=u);
   for(const[id,v]of[['fD',S.D*ff],['fL',S.L*ff],['fHr1',S.Hr1*ff],['fHr2',S.Hr2*ff],['fh1',S.h1*ff],['fh2',S.h2*ff],['fQ',S.Q/FQ[S.qu]],['fV',S.V],['ft',S.t],['fLoss',S.loss]])setv(id,iv(v),force);
@@ -326,14 +798,21 @@ function update(force){
   $('gi').textContent=`Gradiente i = ΔH / L = ${fmt(c.i)}`;
   $('kv').innerHTML=c.hasK?fK(c.K*ff):'—'; $('kun').textContent=c.hasK?k+(demo?' (K fijo de la muestra)':''):'ΔH = 0: no hay flujo (Q = 0)';
   $('k20').innerHTML=c.hasK&&c.tok?`K₂₀ = ${fK(c.K20*ff)} ${k} (a 20 °C)`:'';
+  $('kteo').innerHTML=isFinite(cz.KH)?`Teórico · Hazen: ${fK(cz.KH*ff)}${isFinite(cz.KC)?` · Chapuis: ${fK(cz.KC*ff)}`:''} ${k}`:'';
   $('tres').innerHTML=c.tok?`μ(${c.T} °C) / μ(20 °C) = ${c.ratio.toFixed(4)}<br>K₂₀ = K · μ<sub>T</sub>/μ₂₀ ${c.hasK?'= <b>'+fK(c.K20*ff)+' '+k+'</b>':''}`:'Ingresa T para estandarizar K a 20 °C.';
   const kc=c.hasK?(c.tok?c.K20:c.K):NaN;
-  if(c.hasK){const[n,r]=classify(kc);$('cls').textContent=n;$('clsr').textContent=r+(c.tok?' (según K₂₀)':'');}
+  document.querySelectorAll('#ktab tr.cur').forEach(r=>r.classList.remove('cur'));
+  if(c.hasK){const j=classify(kc),R=KREF[j];$('cls').textContent=R.n;
+    $('clsr').innerHTML=`${R.r} cm/s${c.tok?' (según K₂₀)':''}<br>`+(R.b===2
+      ?`<b style="color:var(--bad)">⚠ Rango de suelo NO apto para carga constante: usar carga variable o deducir K de consolidación.</b>`
+      :`<span style="color:var(--ok)">✓ Rango apto para el permeámetro de carga constante (ASTM D2434).</span>`);
+    const tr=$('kr'+j); if(tr)tr.classList.add('cur');}
   else{$('cls').textContent='—';$('clsr').textContent='Sin flujo: no se puede clasificar.';}
+  const icT=c.icx?`i_c = (Gs−1)/(1+e) = ${fmt(c.ic,3)}`:'i_c ≈ 1.0 (genérico; ingresa Gs y Ms para el valor exacto)';
   let al='Sin flujo: el sistema está en equilibrio hidrostático.',ac='ok';
-  if(c.dir>0){ if(c.i>=1){al='⚠ Riesgo de ebullición / sifonamiento (Quick condition): i ≥ i_c ≈ 1.0. El esfuerzo efectivo tiende a cero y el suelo pierde resistencia.';ac='bad';}
-    else if(c.i>=0.8){al='Atención: el gradiente ascendente se acerca al crítico (i_c ≈ (Gs−1)/(1+e) ≈ 1.0).';ac='warn';}
-    else al=`Flujo ascendente seguro: i = ${fmt(c.i)} < 0.8 (i_c ≈ 1.0).`;}
+  if(c.dir>0){ if(c.i>=c.ic){al=`⚠ Riesgo de ebullición / sifonamiento (Quick condition): i = ${fmt(c.i)} ≥ ${icT}. El esfuerzo efectivo tiende a cero y el suelo pierde resistencia.`;ac='bad';}
+    else if(c.i>=0.8*c.ic){al=`Atención: el gradiente ascendente i = ${fmt(c.i)} se acerca al crítico (${icT}).`;ac='warn';}
+    else al=`Flujo ascendente seguro: i = ${fmt(c.i)} < 0.8·i_c (${icT}).`;}
   else if(c.dir<0)al='Flujo descendente: el flujo aumenta el esfuerzo efectivo; no hay riesgo de sifonamiento.';
   $('alert').className='al '+ac; $('alert').textContent=al;
   $('vel').textContent=c.dir?`${fmt(c.K*c.i*ff)} ${k}`:'0';
@@ -345,8 +824,10 @@ function update(force){
     demo?`K = ${fK(c.K*ff)} ${k} (constante) ⇒ Q = K·i·A = ${fK(c.K*ff)} × ${fmt(c.i)} × ${fmt(As)} = <b>${fmt(Qs)} ${S.sys==='lab'?'cm³/s':'m³/s'}</b>`:
     c.dir?`K = Q·L / (A·ΔH) = (${fmt(Qs)})(${g(S.L)}) / (${fmt(As)}·${g(c.dH)}) = <b>${fK(c.K*ff)} ${k}</b>`:`ΔH = 0 ⇒ Q = 0 y K no se define.`,
     c.dir?`v = K·i = ${fK(c.K*ff)} × ${fmt(c.i)} = <b>${fmt(c.K*c.i*ff)} ${k}</b>`:'v = 0',
-    c.hasK&&c.tok?`K₂₀ = K·μ<sub>T</sub>/μ₂₀ = ${fK(c.K*ff)} × ${c.ratio.toFixed(4)} = <b>${fK(c.K20*ff)} ${k}</b>`:''
+    c.hasK&&c.tok?`K₂₀ = K·μ<sub>T</sub>/μ₂₀ = ${fK(c.K*ff)} × ${c.ratio.toFixed(4)} = <b>${fK(c.K20*ff)} ${k}</b>`:'',
+    c.icx?`i<sub>c</sub> = (G<sub>s</sub> − 1)/(1 + e) = (${fmt(cz.Gs)} − 1)/(1 + ${fmt(cz.e)}) = <b>${fmt(cz.ic)}</b>`:''
   ].filter(Boolean).map(t=>`<div>${t}</div>`).join('');
+  renderGran(cz,c);
 }
 
 /* ============ Eventos ============ */
@@ -363,7 +844,8 @@ document.querySelectorAll('[name=qm]').forEach(r=>r.onchange=e=>{S.mode=e.target
 document.addEventListener('focusout',()=>{commit();update(true);});   // blur: valida y reescribe el valor corregido
 function preset(p){commit();NOTE='';const A=Math.PI*S.D*S.D/4;
   if(p==='asc'){S.h1=40;S.h2=48;} if(p==='desc'){S.h1=50;S.h2=40;}
-  if(p==='eq'){S.h1=45;S.h2=45;} if(p==='crit'){S.h1=35;S.h2=Math.min(72,35+S.L);}
+  if(p==='eq'){S.h1=45;S.h2=45;}
+  if(p==='crit'){const cz=charz(S),ic=isFinite(cz.ic)?cz.ic:1;S.h1=35;S.h2=Math.min(80,Math.ceil((35+ic*S.L)*10)/10);}   // i ≈ i_c exacto
   if(S.mode==='direct'&&S.run==='lab')S.Q=0.01*A*Math.abs(S.h2-S.h1)/S.L;           // caudal coherente con K = 0.01 cm/s
   update();}
 document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>preset(b.dataset.p));
@@ -384,15 +866,139 @@ svg.addEventListener('click',e=>{const s=e.target.closest('[data-step]');
 $('m1').onclick=()=>{if(S.run==='lab')return;commit();S.Q=calc().E.Q;S.mode='direct';S.run='lab';update(true);};
 $('m2').onclick=()=>{if(S.run==='demo')return;commit();const c=calc();S.Kfix=c.hasK?c.K:lastK;S.run='demo';update(true);};
 
+/* Eventos de la caracterización de la muestra */
+$('tA').onclick=()=>{GR.mode='A';gSync();update();};
+$('tB').onclick=()=>{GR.mode='B';gSync();update();};
+for(const[id,key]of[['gWi','Wi'],['gWl','Wl'],['gGs','Gs'],['gMs','Ms'],['gwL','wL'],['gwP','wP'],['gD10','D10'],['gD30','D30'],['gD60','D60'],['gP4','P4'],['gP200','P200'],['gDmax','Dmax']])
+  $(id).addEventListener('input',e=>{GR[key]=e.target.value;update();});
+$('gNP').onchange=e=>{GR.NP=e.target.checked;$('gwP').disabled=GR.NP;update();};
+$('gOrg').onchange=e=>{GR.org=e.target.checked;update();};
+const gb=$('gBody');
+gb.addEventListener('input',e=>{const t=e.target,f=t.dataset.f;if(!f)return;
+  if(f==='pan'){GR.pan=t.value;update();return;}
+  const s=GR.sv[+t.dataset.k];if(!s)return;
+  if(f==='n'){s.n=t.value;gChart(LAST.cz);}
+  if(f==='w'){s.w=t.value;update();}});
+gb.addEventListener('change',e=>{const t=e.target,f=t.dataset.f,s=GR.sv[+t.dataset.k];if(!s)return;
+  if(f==='n'){const m=sieveLookup(t.value);                          // auto-diccionario ASTM E11
+    if(m){s.d=m.d;$('gAddMsg').textContent='';}else return;}
+  else if(f==='d'){const v=parseFloat(t.value);s.d=v>0?v:0;          // vacío o 0 → malla personalizada sin abertura
+    $('gAddMsg').textContent=v<0?'La abertura no puede ser negativa: la fila queda sin abertura.':'';}
+  else return;
+  sortSieves();gTable();update();});
+gb.addEventListener('click',e=>{const b=e.target.closest('[data-del]');if(!b)return;
+  if(GR.sv.length<=2){$('gAddMsg').textContent='Se necesitan al menos 2 mallas.';return;}
+  GR.sv.splice(+b.dataset.del,1);$('gAddMsg').textContent='';gTable();update();});
+$('gNn').addEventListener('input',()=>{const m=sieveLookup($('gNn').value),d=$('gNd');
+  if(m){d.value=m.d;d.dataset.auto='1';}else if(d.dataset.auto){d.value='';delete d.dataset.auto;}});
+$('gNd').addEventListener('input',()=>delete $('gNd').dataset.auto);
+$('gAdd').onclick=()=>{$('gAddMsg').style.color='var(--bad)';let d=parseFloat($('gNd').value);const n=$('gNn').value.trim(),m=sieveLookup(n);
+  if(!(d>0)&&m)d=m.d;
+  if(!n&&!(d>0)){$('gAddMsg').textContent='Escribe la malla (ej. 50, #30, 3/8") o una abertura en mm.';return;}
+  if(!(d>0))d=0;                                                      // malla personalizada sin abertura: no se bloquea
+  if(d>0&&GR.sv.some(s=>Math.abs(s.d-d)<1e-9)){$('gAddMsg').textContent='Ya existe una malla con esa abertura.';return;}
+  const name=n?(m&&/^\d/.test(n)&&m.k.startsWith('#')?m.k:n):`${d} mm`;
+  GR.sv.push({n:name,d,w:0});sortSieves();
+  $('gNd').value='';delete $('gNd').dataset.auto;$('gNn').value='';
+  $('gAddMsg').textContent=d>0?'':`«${name}» no está en el diccionario ASTM E11: se agregó sin abertura (entra al balance, no se grafica).`;
+  $('gAddMsg').style.color=d>0?'var(--bad)':'var(--mut)';
+  gTable();update();};
+$('gRst').onclick=()=>{const keep={Gs:GR.Gs,Ms:GR.Ms,wL:GR.wL,wP:GR.wP,NP:GR.NP,org:GR.org};GR={...GDEF(),...keep};$('gAddMsg').textContent='';gSync();update();};
+$('gEx').onclick=()=>{commit();const V=Math.PI*S.D*S.D/4*S.L;GR.Gs='2.65';GR.Ms=String(Math.round(1.65*V));setv('gGs',GR.Gs,1);setv('gMs',GR.Ms,1);update();};
+
+/* ============ MUSGo · reproductor con subtítulos sincronizados ============ */
+const mgA=$('mgA'), MG={id:'intro',subs:null,approx:false,avail:null,cur:-2};
+const mmss=t=>`${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`;
+const mgSplit=t=>t.split(/(?<=[.!?…])\s+/).map(x=>x.trim()).filter(Boolean);
+function mgStatus(h){$('mgSt').innerHTML=h;}
+function groupWords(ws){const out=[];let cur=null;
+  for(const w of ws){const tx=String(w.word??w.text??'').trim();if(!tx)continue;const st=+w.start||0,en=isFinite(+w.end)?+w.end:st;
+    if(!cur)cur={start:st,end:en,text:tx,n:1};else{cur.text+=' '+tx;cur.end=en;cur.n++;}
+    if(cur.n>=9||/[.!?;:…]$/.test(tx)){out.push(cur);cur=null;}}
+  if(cur)out.push(cur);return out.map(({start,end,text})=>({start,end,text}));}
+function parseSubs(j){
+  if(!j)return null;
+  const arr=Array.isArray(j)?j:Array.isArray(j.segments)?j.segments:null;
+  let out=null;
+  if(arr&&arr.length&&arr[0]&&!('text' in arr[0])&&('word' in arr[0]))out=groupWords(arr);
+  else if(arr)out=arr.map(s=>({start:+s.start||0,end:+s.end,text:String(s.text??'').trim()})).filter(s=>s.text);
+  else if(Array.isArray(j.words))out=groupWords(j.words);
+  if(!out||!out.length)return null;
+  out.sort((a,b)=>a.start-b.start);
+  out.forEach((s,k)=>{if(!isFinite(s.end)||s.end<=s.start)s.end=k+1<out.length?out[k+1].start:s.start+4;});
+  return out;}
+function approxSubs(txt,dur){const ps=mgSplit(txt),tot=ps.reduce((a,p)=>a+p.length,0)||1;let t=0;
+  return ps.map(p=>{const d=(isFinite(dur)&&dur>0?dur:ps.length*4)*p.length/tot,s={start:t,end:t+d,text:p};t+=d;return s;});}
+function mgRenderList(){
+  const L=MG.subs||mgSplit(MUSGO_CLIPS[MG.id].guion).map(t=>({start:NaN,text:t}));
+  $('mgList').innerHTML=L.map((s,k)=>`<p data-k="${k}">${isFinite(s.start)?`<small>${mmss(s.start)}</small>`:''}${esc(s.text)}</p>`).join('');
+  MG.cur=-2;}
+function mgPreview(){$('mgCap').innerHTML=`<small>Vista previa del guion · ${esc(MUSGO_CLIPS[MG.id].titulo)}</small><br>${esc(mgSplit(MUSGO_CLIPS[MG.id].guion)[0]||'')}`;}
+function mgUnavail(){MG.avail=false;const c=MUSGO_CLIPS[MG.id];$('mgPlay').textContent='▶ Reproducir';
+  mgStatus(`<span style="color:var(--warn)">●</span> Audio aún no disponible. Coloca <code>${c.wav}</code> o <code>${c.mp3}</code> (y <code>${c.json}</code>) en la carpeta <code>./audio/</code>. Mientras tanto se muestra el guion.`);
+  MG.subs=null;mgRenderList();mgPreview();}
+function mgLoad(id,autoplay){
+  if(!MUSGO_CLIPS[id])id='intro';
+  MG.id=id;MG.subs=null;MG.avail=null;MG.approx=false;$('mgSel').value=id;
+  try{mgA.pause();}catch(_){}
+  const c=MUSGO_CLIPS[id];
+  mgA.innerHTML=`<source src="${c.wav}" type="audio/wav"><source src="${c.mp3}" type="audio/mpeg">`;
+  mgA.querySelector('source:last-child').addEventListener('error',()=>{if(MG.id===id)mgUnavail();});
+  mgA.load();
+  $('mgProg').style.width='0';$('mgPlay').textContent='▶ Reproducir';
+  mgStatus(`<span style="color:var(--ok)">●</span> Listo · cápsula «${esc(c.titulo)}» (<code>${c.wav}</code> / .mp3 + .json)`);
+  mgRenderList();mgPreview();
+  if(autoplay)mgPlay();}
+function mgPlay(){
+  if(MG.avail===false){mgUnavail();return;}
+  if(!mgA.paused){mgA.pause();return;}
+  mgStatus('Cargando audio…');
+  let p;try{p=mgA.play();}catch(_){mgUnavail();return;}
+  if(p&&p.catch)p.catch(err=>{if(err&&err.name==='NotAllowedError')mgStatus('Toca ▶ para iniciar la reproducción.');else if(!err||err.name!=='AbortError')mgUnavail();});}
+function mgFetchSubs(){const id=MG.id,c=MUSGO_CLIPS[id];
+  fetch(c.json,{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null).then(j=>{
+    if(MG.id!==id)return;const s=parseSubs(j);
+    if(s){MG.subs=s;MG.approx=false;}else{MG.subs=approxSubs(c.guion,mgA.duration);MG.approx=true;}
+    mgRenderList();
+    mgStatus(`<span style="color:var(--ok)">●</span> Reproduciendo «${esc(c.titulo)}»${MG.approx?' · subtítulos con sincronía aproximada (falta <code>'+c.json+'</code>)':' · subtítulos sincronizados'}`);});}
+function mgTick(){
+  const t=mgA.currentTime,d=mgA.duration;$('mgProg').style.width=(d>0?Math.min(100,t/d*100):0)+'%';
+  if(MG.subs){const k=MG.subs.findIndex(s=>t>=s.start&&t<s.end);
+    if(k!==MG.cur){MG.cur=k;const L=$('mgList');
+      L.querySelectorAll('p.on').forEach(p=>p.classList.remove('on'));
+      if(k>=0){const p=L.querySelector(`p[data-k="${k}"]`);if(p){p.classList.add('on');L.scrollTop=p.offsetTop-30;}
+        $('mgCap').textContent=MG.subs[k].text;}}}
+  if(!mgA.paused&&!mgA.ended)requestAnimationFrame(mgTick);}
+function mgPick(){if(!LAST)return'intro';const{c,cz}=LAST;
+  if(c.dir>0&&c.i>=c.ic)return'critico';
+  if(cz.sample||cz.pl.has)return'laboratorio';
+  if(c.dir>0)return'ascendente';
+  if(c.dir<0)return'descendente';
+  return'intro';}
+mgA.addEventListener('loadedmetadata',()=>{MG.avail=true;mgFetchSubs();});
+mgA.addEventListener('play',()=>{$('mgPlay').textContent='⏸ Pausa';requestAnimationFrame(mgTick);});
+mgA.addEventListener('pause',()=>{$('mgPlay').textContent='▶ Reproducir';});
+mgA.addEventListener('ended',()=>{$('mgPlay').textContent='↻ Repetir';$('mgProg').style.width='100%';});
+mgA.addEventListener('error',()=>{mgUnavail();});
+$('mgSel').innerHTML=Object.entries(MUSGO_CLIPS).map(([id,c])=>`<option value="${id}">${esc(c.titulo)}</option>`).join('');
+$('mgSel').onchange=e=>mgLoad(e.target.value,false);
+$('mgPlay').onclick=()=>mgPlay();
+$('mgExp').onclick=()=>{const id=mgPick();mgLoad(id,true);};
+$('mgList').addEventListener('click',e=>{const p=e.target.closest('p[data-k]');if(!p||!MG.subs||!MG.avail)return;
+  mgA.currentTime=MG.subs[+p.dataset.k].start;if(mgA.paused)mgPlay();else mgTick();});
+
+buildKTable();
+gSync();
 update();
+mgLoad('intro',false);
 </script>
 <footer style="text-align:center;padding:18px 20px;margin-top:24px;border-top:1px solid var(--bd);background:#fff;color:var(--mut);font-size:12.5px">
   <div>
-    Diseñado y desarrollado por <strong style="color:var(--tx)">Wilberth Adair Martínez Puc</strong> · 
+    Diseñado y desarrollado por <strong style="color:var(--tx)">Wilberth Adair Martínez Puc</strong> ·
    (2026)
   </div>
   <div style="margin-top:4px;font-size:11.5px">
-    Simulador Interactivo de Permeabilidad — Distribuido bajo licencia 
+    Simulador Interactivo de Permeabilidad — Distribuido bajo licencia
     <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" target="_blank" rel="noopener" style="color:var(--w);text-decoration:none;font-weight:600">
       CC BY-NC 4.0
     </a> (Uso libre con atribución al autor · Prohibido su uso comercial).
